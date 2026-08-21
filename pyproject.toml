@@ -1,0 +1,67 @@
+[build-system]
+requires = ["hatchling>=1.18"]
+build-backend = "hatchling.build"
+
+[project]
+name = "amharic-segmenter"
+dynamic = ["version"]
+description = "Sentence/word tokenization, morpheme splitting and stemming for Amharic (አማርኛ), NLTK-style and dependency-free."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Ali Kibret Muhamed", email = "alikibretmuhamed@gmail.com" }]
+keywords = ["amharic", "አማርኛ", "ethiopic", "tokenizer", "stemmer", "stemming", "nlp", "morphology", "low-resource", "ge'ez"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Text Processing :: Linguistic",
+    "Typing :: Typed",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7", "pytest-cov", "ruff", "mypy", "build", "twine"]
+
+[project.urls]
+Homepage = "https://github.com/Alki45/amharic-segmenter"
+Documentation = "https://github.com/Alki45/amharic-segmenter#readme"
+Issues = "https://github.com/Alki45/amharic-segmenter/issues"
+Changelog = "https://github.com/Alki45/amharic-segmenter/blob/main/CHANGELOG.md"
+
+[project.scripts]
+amharic-segmenter = "amharic_segmenter.cli:main"
+
+[tool.hatch.version]
+path = "src/amharic_segmenter/_version.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/amharic_segmenter"]
+
+[tool.hatch.build.targets.sdist]
+include = ["/src", "/tests", "/docs", "/README.md", "/LICENSE", "/CHANGELOG.md"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 110
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.mypy]
+python_version = "3.9"
+strict = true
+files = ["src"]
