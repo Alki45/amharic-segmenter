@@ -1,0 +1,110 @@
+# Seed lexicon for amharic-segmenter (UTF-8, one word per line, '#' = comment).
+#
+# These are stems that may take prefixes/suffixes. A split such as ተማሪዎች ->
+# ተማሪ + ዎች is only accepted when the stem is listed here (or when the
+# opt-in "rules" strategy is used). The list starts with the nouns, names and
+# function words that appear as examples in አማርኛ ሠዋሰው (1963 E.C.); grow it
+# with a pull request or pass your own words to AmharicTokenizer(lexicon=...).
+
+# names
+ከበደ
+አበበ
+ተፈራ
+
+# people and relations
+ሰው
+ልጅ
+ተማሪ
+አስተማሪ
+ሐኪም
+ጸሐፊ
+ሠራተኛ
+ዘበኛ
+ገበሬ
+ወንድም
+አባት
+እናት
+ወንድ
+ሴት
+ሴትዮ
+ባለቤት
+
+# animals
+ፈረስ
+በሬ
+በቅሎ
+ላም
+ዶሮ
+
+# things and places
+ቤት
+ጓዳ
+ጣራ
+መጽሐፍ
+ወረቀት
+ብዕር
+በር
+ወንበር
+ጠረጴዛ
+እርሳስ
+እንጀራ
+ልብስ
+ድንጋይ
+መሰንቆ
+ከተማ
+አገር
+ትምህርት
+ጌታ
+
+# adjectives and other stems used in examples
+ችግር
+ክፉ
+ደግ
+ብቻ
+
+# pronouns and demonstratives (take ን, ና, ም)
+እኔ
+እኛ
+አንተ
+አንቺ
+እሱ
+እሷ
+እርሱ
+እርሷ
+እነሱ
+እናንተ
+ይህ
+ይህች
+ያ
+ያች
+እነዚህ
+እነዚያ
+
+# common function words: never split, whatever suffix they happen to end with
+ነው
+ናቸው
+ናት
+ነኝ
+ነህ
+ነሽ
+ነበር
+ነበሩ
+ነበረች
+አይደለም
+አይደሉም
+ውስጥ
+ላይ
+ጋር
+ግን
+እና
+ወይም
+እንዲሁም
+ሁሉ
+ሁሉም
+እንደ
+ወደ
+ስለ
+ብዙ
+ትንሽ
+ዛሬ
+ነገር
